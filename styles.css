@@ -1,0 +1,33 @@
+.view {
+
+    height: 600px;
+    width: 600px;
+  
+    
+    background-color: blueviolet;
+}
+
+#bookshelf {
+
+    height: 600px;
+    width: 600px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+
+}
+h6 {
+    margin: 0px;
+}
+
+
+.bookObj {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: chartreuse;
+    height: 100%;
+    width: 100%;
+    font-size: 1em;
+
+    
+}
