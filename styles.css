@@ -1,41 +1,110 @@
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+    /* background-image: url('/Users/eddsansome/Desktop/libraryBooks/janko-ferlic-sfL_QOnmy00-unsplash.jpg'); */
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
 .view {
 
-    height: 600px;
-    width: 600px;
+    max-height: 820px;
+   
+   
   
     
-    background-color: blueviolet;
+    
 }
 
 #bookshelf {
 
-    height: 600px;
-    width: 600px;
+    max-height: 800px;
+    
+    
+    overflow-y: scroll;
 
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    row-gap: 10px;
+    column-gap: 10px;
+   
 
 }
-h6 {
-    margin: 0px;
+h1 {
+    
+    padding: 0px;
+    margin: 10px 0px 0px 10px;
+    font-size: 1.3vw;
+    
+
 }
+
+h2, h3, h6 {
+  
+    padding: 0px;
+    margin: 0px;
+    margin: 0px 0px 0px 10px;
+    font-size: 1vw;
+
+}
+
+#bookForm {
+    display: flex;
+    width: 100%;
+
+
+}
+
 
 
 .bookObj {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: chartreuse;
-    height: 100%;
-    width: 100%;
-    font-size: 1em;
-
     
+    
+    height: 97%;
+    width: 97%;
+    font-size: 1em;
+    margin-top: 3px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 0px;
+    column-gap: 0px;
+
+    box-shadow: 0px 2px 4px 0px black; 
+   
 }
 
 .deleteButton {
 
-    background-color: red;
-    height: 10px;
-    width: 10px;
-    float: left;
+    background-color: lightcoral; 
+    border: none;
+    height: 20px;
+    width: 100px;
+    float: right;
+    margin: 5px 10px 10px 10px;
+    box-shadow: 0px 2px 4px 0px slategray; 
+    color: white;
+
 }
+
+.deleteButton:hover {
+    cursor: pointer;
+}
+
+.readButton {
+    background-color: lightseagreen ;
+    border: none;
+    height: 20px;
+    width: 100px;
+    float: right;
+    margin: 5px 10px 10px 10px;
+    box-shadow: 0px 2px 4px 0px slategray; 
+    color: white;
+
+}
+
+.readButton:hover {
+    cursor: pointer;
+}
+

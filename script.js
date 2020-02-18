@@ -4,35 +4,26 @@ let myLibrary = []
 let myForm = []
 let addBookToScreen = document.getElementById('addButton');
 let button = addBookToScreen.addEventListener('click', () => bookForm());
-let deleteBook = document.getElementsByClassName('deleteButton')
-console.log(deleteBook)
 
-
-// deleteButton.addEventListener('click', () => testFunc(obj));
 
 
 
 window.onload = () => addGrid();
 
-
-
-
-function Book(title, author, pages, yearPublished, readStatus) {
+function Book(title, author, pages, readStatus) {
 //book object constructor
 
     this.title = title,
     this.author = author,
     this.pages = pages,
-    this.yearPublished = yearPublished,
     this.readStatus = readStatus
 }
 
-function addBookToLibrary(title, author, pages, yearPublished, readStatus) {
+function addBookToLibrary(title, author, pages, readStatus) {
     let book = new Book();
     book.author = author
     book.pages = pages
     book.title = title
-    book.yearPublished = yearPublished
     book.readStatus = readStatus
 
     myLibrary.push(book)
@@ -40,13 +31,11 @@ function addBookToLibrary(title, author, pages, yearPublished, readStatus) {
 
 }
 
-function testFunc(x) {
-
+function removeBookFromLibrary(x) {
     
     let id = x.replace('bookButton-','')
     console.log(`delete button ${id} is working`)
     console.log(typeof(id))
-
     
     myLibrary.splice(id, 1)
     refreshGrid();
@@ -54,27 +43,47 @@ function testFunc(x) {
     clearInputs();
 }
 
-addBookToLibrary('The Hobbit', 'J.R.R Tolkein', 287, 1955, true)
-addBookToLibrary('The Lord of the Rings', 'J.R.R Tolkein', 526, 1958, false)
-addBookToLibrary('Game of Thrones', 'George RR Martin', 627, 1998, false)
+function readBookToggle(x) {
+    
+    let id = x.replace('readButton-','')
+    console.log(`read button ${id} is working`)
+
+    if(myLibrary[id].readStatus === 'Yes'){
+        myLibrary[id].readStatus = 'No'
+    }
+    else if(myLibrary[id].readStatus === 'No'){
+        myLibrary[id].readStatus = 'Yes'
+    }
+
+    console.log(myLibrary[id].readStatus)
+    refreshGrid();
+    addGrid();
+
+}
+
+addBookToLibrary('Harry Potter and the Order of the Phoenix', 'J.R.R Tolkein', 287, 'Yes')
+addBookToLibrary('The Hobbit', 'J.R.R Tolkein', 287, 'Yes')
+addBookToLibrary('The Hobbit', 'J.R.R Tolkein', 287, 'Yes')
+addBookToLibrary('The Hobbit', 'J.R.R Tolkein', 287, 'Yes')
+addBookToLibrary('The Hobbit', 'J.R.R Tolkein', 287, 'Yes')
+addBookToLibrary('The Hobbit', 'J.R.R Tolkein', 287, 'Yes')
 
 function addGrid() {
 
-   
 
     for(obj in myLibrary) {
         gridElement = document.createElement('div');
         
 
-        gridElement.innerHTML = `Title: ${myLibrary[obj].title}<br>
-                                 Author: ${myLibrary[obj].author}<br>
-                                 Pages: ${myLibrary[obj].pages}<br>
-                                 Published: ${myLibrary[obj].yearPublished}<br>
-                                 Read: ${myLibrary[obj].readStatus}                      
+        gridElement.innerHTML = `<h1>${myLibrary[obj].title}</h1><br>
+                                 <h2>${myLibrary[obj].author}</h2><br>
+                                 <h3>${myLibrary[obj].pages} pages</h3><br>
+                                 <h3>Read: ${myLibrary[obj].readStatus}</h3>                      
                                 `
 
         gridElement.id = `bookObject${obj}`
         gridElement.classList.add('bookObj');
+
 
        
 
@@ -83,42 +92,40 @@ function addGrid() {
 
         node.appendChild(gridElement)
 
-        buttonElement = document.createElement('button')
+        let buttonElement = document.createElement('button')
         buttonElement.id = `bookButton-${obj}`
+
         buttonElement.classList.add('deleteButton');
+        buttonElement.innerHTML = 'Delete Book'
         let gridNode = document.getElementById(gridElement.id)
         gridNode.appendChild(buttonElement)
-        
-        
-        
+ 
+        let readButtonElement = document.createElement('button')
+        readButtonElement.id = `readButton-${obj}`
+        readButtonElement.classList.add('readButton');
+        readButtonElement.innerHTML = 'Read?'
+        gridNode.appendChild(readButtonElement)
 
-      
+        // let bookBackground = document.createElement('img')
+        // bookBackground.src = '/Users/eddsansome/Desktop/libraryBooks/book.png'
+        // bookBackground.classList.add('bookBackground')
+        // gridElement.appendChild(bookBackground)
 
-        // buttonElement = document.createElement('button')
-        // buttonElement.id = `readButton${obj}`
-        // buttonElement.classList.add('readButton');
-        // let gridNode = document.getElementById(gridElement.id)
-        // gridNode.appendChild(buttonElement)
+
         
-
     }
-
     let deleteButton = document.querySelectorAll('.deleteButton')
+    let readToggle = document.querySelectorAll('.readButton')
     
-
    for(let button of deleteButton) {
-       button.addEventListener('click', () => testFunc(button.id))
+       button.addEventListener('click', () => removeBookFromLibrary(button.id))
+   }
+
+   for(let button of readToggle) {
+       button.addEventListener('click', () => readBookToggle(button.id))
    }
     
-
- 
- 
-
-    
-
 }
-
-
 
 function refreshGrid() {
 
@@ -132,41 +139,35 @@ function refreshGrid() {
 function bookForm() {
 
 
+
     let title = document.getElementById('title').value;
     let author = document.getElementById('author').value
     let pages = document.getElementById('pages').value
-    let datePublished = document.getElementById('yearPub').value
     let readStatus = document.getElementById('readStatus').value
 
     console.log(typeof(title), typeof(author), typeof(pages)
-                        ,typeof(datePublished) ,typeof(readStatus))
+                        ,typeof(readStatus))
 
-    if(title === ''|| author === '' || pages === '' || datePublished === '' || readStatus === '') {
+    if(title === ''|| author === '' || pages === '' || readStatus === '') {
 
         alert('please complete all fields!')
         return;
     }
     else{
-            addBookToLibrary(title, author, pages, datePublished, readStatus)
+            addBookToLibrary(title, author, pages, readStatus)
             refreshGrid();
             addGrid();
             clearInputs();
 
     }
-
-    
-    
     }
 
 function clearInputs() {
     document.getElementById('title').value = ''
     document.getElementById('author').value = ''
     document.getElementById('pages').value = ''
-    document.getElementById('yearPub').value = ''
     document.getElementById('readStatus').value = ''
-
-    
-
+  
 }
 
 
