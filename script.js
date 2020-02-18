@@ -71,16 +71,30 @@ function refreshGrid() {
 
 function bookForm() {
 
+
     let title = document.getElementById('title').value;
     let author = document.getElementById('author').value
     let pages = document.getElementById('pages').value
     let datePublished = document.getElementById('yearPub').value
     let readStatus = document.getElementById('readStatus').value
 
-    addBookToLibrary(title, author, pages, datePublished, readStatus)
-    refreshGrid();
-    addGrid();
-    clearInputs();
+    console.log(typeof(title), typeof(author), typeof(pages)
+                        ,typeof(datePublished) ,typeof(readStatus))
+
+    if(title === ''|| author === '' || pages === '' || datePublished === '' || readStatus === '') {
+
+        alert('please complete all fields!')
+        return;
+    }
+    else{
+            addBookToLibrary(title, author, pages, datePublished, readStatus)
+            refreshGrid();
+            addGrid();
+            clearInputs();
+
+    }
+
+    
     
     }
 
