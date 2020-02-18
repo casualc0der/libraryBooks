@@ -1,7 +1,11 @@
+  {
+    box-sizing: border-box;
+  }
+
 body {
 
     font-family: Arial, Helvetica, sans-serif;
-    /* background-image: url('/Users/eddsansome/Desktop/libraryBooks/janko-ferlic-sfL_QOnmy00-unsplash.jpg'); */
+    background-image: url('/Users/eddsansome/Desktop/libraryBooks/janko-ferlic-sfL_QOnmy00-unsplash.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -10,6 +14,7 @@ body {
 .view {
 
     max-height: 820px;
+    max-width: 100%;
    
    
   
@@ -17,15 +22,16 @@ body {
     
 }
 
-#bookshelf {
+#bookshelf { 
 
     max-height: 800px;
+    max-width: 100%;
     
     
     overflow-y: scroll;
 
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     row-gap: 10px;
     column-gap: 10px;
@@ -48,19 +54,14 @@ h2, h3, h6 {
     margin: 0px 0px 0px 10px;
     font-size: 1vw;
 
-}
-
-#bookForm {
-    display: flex;
-    width: 100%;
+} 
 
 
-}
 
 
 
 .bookObj {
-    
+     
     
     height: 97%;
     width: 97%;
@@ -71,11 +72,11 @@ h2, h3, h6 {
     row-gap: 0px;
     column-gap: 0px;
 
-    box-shadow: 0px 2px 4px 0px black; 
+    box-shadow: 0px 2px 4px 0px black;  
    
 }
 
-.deleteButton {
+ .deleteButton {
 
     background-color: lightcoral; 
     border: none;
@@ -106,5 +107,4 @@ h2, h3, h6 {
 
 .readButton:hover {
     cursor: pointer;
-}
-
+}  

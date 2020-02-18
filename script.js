@@ -72,17 +72,23 @@ function addGrid() {
 
 
     for(obj in myLibrary) {
+    
         gridElement = document.createElement('div');
         
 
-        gridElement.innerHTML = `<h1>${myLibrary[obj].title}</h1><br>
-                                 <h2>${myLibrary[obj].author}</h2><br>
-                                 <h3>${myLibrary[obj].pages} pages</h3><br>
-                                 <h3>Read: ${myLibrary[obj].readStatus}</h3>                      
+        gridElement.innerHTML = `
+                                <div class="card-body">
+                                <h5 class="card-title">${myLibrary[obj].title}</h5><br>
+                                <h5 class="card-title">${myLibrary[obj].author}</h5><br>
+                                <p class="card-text">${myLibrary[obj].pages} pages</p><br>
+                                <p class="card-text">Read: ${myLibrary[obj].readStatus}</p>
+                                </div>                      
                                 `
 
         gridElement.id = `bookObject${obj}`
-        gridElement.classList.add('bookObj');
+      
+        gridElement.classList.add('card');
+        gridElement.style.width= '18rem'
 
 
        
@@ -95,27 +101,27 @@ function addGrid() {
         let buttonElement = document.createElement('button')
         buttonElement.id = `bookButton-${obj}`
 
-        buttonElement.classList.add('deleteButton');
+
+        buttonElement.classList.add('btn');
+        buttonElement.classList.add('btn-danger');
         buttonElement.innerHTML = 'Delete Book'
         let gridNode = document.getElementById(gridElement.id)
         gridNode.appendChild(buttonElement)
  
         let readButtonElement = document.createElement('button')
         readButtonElement.id = `readButton-${obj}`
-        readButtonElement.classList.add('readButton');
+        readButtonElement.classList.add('btn');
+        readButtonElement.classList.add('btn-success');
         readButtonElement.innerHTML = 'Read?'
         gridNode.appendChild(readButtonElement)
 
-        // let bookBackground = document.createElement('img')
-        // bookBackground.src = '/Users/eddsansome/Desktop/libraryBooks/book.png'
-        // bookBackground.classList.add('bookBackground')
-        // gridElement.appendChild(bookBackground)
+    
 
 
         
     }
-    let deleteButton = document.querySelectorAll('.deleteButton')
-    let readToggle = document.querySelectorAll('.readButton')
+    let deleteButton = document.querySelectorAll('.btn-danger')
+    let readToggle = document.querySelectorAll('.btn-success')
     
    for(let button of deleteButton) {
        button.addEventListener('click', () => removeBookFromLibrary(button.id))
