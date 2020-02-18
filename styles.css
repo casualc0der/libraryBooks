@@ -31,3 +31,11 @@ h6 {
 
     
 }
+
+.deleteButton {
+
+    background-color: red;
+    height: 10px;
+    width: 10px;
+    float: left;
+}
