@@ -6,63 +6,71 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Oleo+Script|Playfair+Display+SC&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
 
-<div class="container-fluid">      <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Add Book to Library</h5>
+        <div class="hero-image">
+            <div class="hero-text">
+                Sky Library
+            </div>
+        </div>
+        <div class="header">
+            <a href="#" class="logo"></a>
+            <div class="header-right">
+                <button id="menuModal">Add Book</button>
+               
 
+            </div>
+            
+        </div>
+       
+
+        
+
+        <div id="bookModal" class="modal">
+
+
+
+            <div class="modal-content">
           <div id="bookForm">
-            <input type="text" id="title" maxlength="50" placeholder="Book Title">
+            <input type="text" id="title" maxlength="55" placeholder="Book Title">
             <br>
-            <input type="text" id="author" maxlength="50" placeholder="Author">
+            <input type="text" id="author" maxlength="55" placeholder="Author">
             <br>
-            <input type="text" id="pages" placeholder="Pages">
+            <input type="text" id="pages" min="1" max="9999" maxlength="5" placeholder="Pages">
             <h6>Read?</h6>
             <select id="readStatus" name="readStatus">
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
-       
+        
               </select>
-              
+              <button type="button" id="addButton">Add Book</button>
+              <span class="close">&times;</span>
               </div>
 
-
-          
+              
+              </div>
         </div>
 
-        <div class="modal-footer">
-            <button type="button" class="btn btn-primary" id="addButton">Add Book</button>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Add a book!
-  </button>
+          
+       
+
+        
+            
+          
+          
+   
+
+ 
 
         <div class="view">
 
                 <br>
             <div id="bookshelf">
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                      <h5 class="card-title">Harry Potter</h5>
-                      <h5 class="card-title">JK Rowling</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary">Read?</a>
-                      <a href="#" class="btn btn-primary">Delete</a>
-                    </div>
-                  </div>
+        
               
 
             </div>
@@ -70,11 +78,14 @@
 
             
         </div>
-    </div>  
+
    
 
         <br>
  
+
+
+        
 
            
 
@@ -83,8 +94,5 @@
  
               <br>
         <script src="script.js" async defer></script>
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     </body>
 </html>

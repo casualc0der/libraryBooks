@@ -63,10 +63,13 @@ function readBookToggle(x) {
 
 addBookToLibrary('Harry Potter and the Order of the Phoenix', 'J.R.R Tolkein', 287, 'Yes')
 addBookToLibrary('The Hobbit', 'J.R.R Tolkein', 287, 'Yes')
+addBookToLibrary('Harry Potter and the Order of the Phoenix', 'J.R.R Tolkein', 287, 'Yes')
 addBookToLibrary('The Hobbit', 'J.R.R Tolkein', 287, 'Yes')
+addBookToLibrary('Harry Potter and the Order of the Phoenix', 'J.R.R Tolkein', 287, 'Yes')
 addBookToLibrary('The Hobbit', 'J.R.R Tolkein', 287, 'Yes')
+addBookToLibrary('Harry Potter and the Order of the Phoenix', 'J.R.R Tolkein', 287, 'Yes')
 addBookToLibrary('The Hobbit', 'J.R.R Tolkein', 287, 'Yes')
-addBookToLibrary('The Hobbit', 'J.R.R Tolkein', 287, 'Yes')
+
 
 function addGrid() {
 
@@ -82,46 +85,48 @@ function addGrid() {
                                 <h5 class="card-title">${myLibrary[obj].author}</h5><br>
                                 <p class="card-text">${myLibrary[obj].pages} pages</p><br>
                                 <p class="card-text">Read: ${myLibrary[obj].readStatus}</p>
-                                </div>                      
+                                </div>                  
                                 `
 
         gridElement.id = `bookObject${obj}`
-      
-        gridElement.classList.add('card');
-        gridElement.style.width= '18rem'
+
+        if(myLibrary[obj].r === undefined) {
+            myLibrary[obj].r = rnd(0,255)
+            myLibrary[obj].g = rnd(0,255)
+            myLibrary[obj].b = rnd(50,255)
+            
+
+        }
+
+        gridElement.style.backgroundColor = `rgb(${myLibrary[obj].r},${myLibrary[obj].g},${myLibrary[obj].b})`;
+
+        gridElement.classList.add('bookObj');
+        
 
 
        
 
         let node = document.getElementById('bookshelf');
-        
-
         node.appendChild(gridElement)
 
         let buttonElement = document.createElement('button')
         buttonElement.id = `bookButton-${obj}`
-
-
-        buttonElement.classList.add('btn');
-        buttonElement.classList.add('btn-danger');
+        buttonElement.classList.add('deleteButton');
         buttonElement.innerHTML = 'Delete Book'
+        
         let gridNode = document.getElementById(gridElement.id)
-        gridNode.appendChild(buttonElement)
  
         let readButtonElement = document.createElement('button')
         readButtonElement.id = `readButton-${obj}`
-        readButtonElement.classList.add('btn');
-        readButtonElement.classList.add('btn-success');
+        readButtonElement.classList.add('readToggle');
         readButtonElement.innerHTML = 'Read?'
+
         gridNode.appendChild(readButtonElement)
+        gridNode.appendChild(buttonElement)
 
-    
-
-
-        
     }
-    let deleteButton = document.querySelectorAll('.btn-danger')
-    let readToggle = document.querySelectorAll('.btn-success')
+    let deleteButton = document.querySelectorAll('.deleteButton')
+    let readToggle = document.querySelectorAll('.readToggle')
     
    for(let button of deleteButton) {
        button.addEventListener('click', () => removeBookFromLibrary(button.id))
@@ -156,7 +161,7 @@ function bookForm() {
 
     if(title === ''|| author === '' || pages === '' || readStatus === '') {
 
-        alert('please complete all fields!')
+        alert('Please complete all fields!')
         return;
     }
     else{
@@ -164,6 +169,7 @@ function bookForm() {
             refreshGrid();
             addGrid();
             clearInputs();
+            modal.style.display = "none";
 
     }
     }
@@ -174,6 +180,45 @@ function clearInputs() {
     document.getElementById('pages').value = ''
     document.getElementById('readStatus').value = ''
   
+}
+
+function rnd(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+  }
+
+
+//modal functionality 
+
+let modal = document.getElementById('bookModal')
+let btn = document.getElementById('menuModal')
+let span = document.getElementsByClassName('close')[0];
+
+btn.onclick = () => modal.style.display = "block";
+span.onclick= () => modal.style.display = "none";
+
+window.onclick = function(e) {
+    if (e.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+//stick nav 
+
+window.onscroll = () => stickyBar();
+
+var header = document.getElementsByClassName('header')[0]
+
+var sticky = header.offsetTop;
+
+function stickyBar() {
+    if(window.pageYOffset > sticky) {
+        header.classList.add("sticky")
+        btn.classList.add("bookLogo")
+    } else {
+        header.classList.remove("sticky")
+        btn.classList.remove("bookLogo")
+    }
+
 }
 
 
