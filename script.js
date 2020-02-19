@@ -61,14 +61,9 @@ function readBookToggle(x) {
 
 }
 
-addBookToLibrary('Harry Potter and the Order of the Phoenix', 'J.R.R Tolkein', 287, 'Yes')
-addBookToLibrary('The Hobbit', 'J.R.R Tolkein', 287, 'Yes')
-addBookToLibrary('Harry Potter and the Order of the Phoenix', 'J.R.R Tolkein', 287, 'Yes')
-addBookToLibrary('The Hobbit', 'J.R.R Tolkein', 287, 'Yes')
-addBookToLibrary('Harry Potter and the Order of the Phoenix', 'J.R.R Tolkein', 287, 'Yes')
-addBookToLibrary('The Hobbit', 'J.R.R Tolkein', 287, 'Yes')
-addBookToLibrary('Harry Potter and the Order of the Phoenix', 'J.R.R Tolkein', 287, 'Yes')
-addBookToLibrary('The Hobbit', 'J.R.R Tolkein', 287, 'Yes')
+addBookToLibrary('Harry Potter and the Order of the Phoenix', 'JK Rowling', 287, 'Yes')
+addBookToLibrary('The Hobbit', 'J.R.R Tolkein', 310, 'Yes')
+
 
 
 function addGrid() {
