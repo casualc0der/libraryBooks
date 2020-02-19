@@ -13,7 +13,8 @@ body {
 }
 
 .hero-image {
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/Users/eddsansome/Desktop/libraryBooks/janko-ferlic-sfL_QOnmy00-unsplash.jpg');
+    background: rgb(169,195,210);
+    background: linear-gradient(0deg, rgba(169,195,210,1) 0%, rgba(153,167,251,1) 100%) fixed;
     height: 20%;
     background-position: center;
     background-repeat: no-repeat;
