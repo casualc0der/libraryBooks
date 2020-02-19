@@ -8,6 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Oleo+Script|Playfair+Display+SC&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="styles.css">
+        
     </head>
     <body>
 
@@ -93,6 +94,25 @@
         
  
               <br>
-        <script src="script.js" async defer></script>
+
+              <script src="script.js" async defer></script>
+
+                <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"></script>
+
+                <!-- TODO: Add SDKs for Firebase products that you want to use
+                    https://firebase.google.com/docs/web/setup#available-libraries -->
+
+                <script>
+                var firebaseConfig = {
+                    apiKey: "AIzaSyCnFuJCZJq-yB9v8iSqh4gNqRGxa5bIwmA",
+                    authDomain: "small-talk-e963d.firebaseapp.com",
+                    databaseURL: "https://small-talk-e963d.firebaseio.com",
+                    projectId: "small-talk-e963d",
+                    storageBucket: "small-talk-e963d.appspot.com",
+                    messagingSenderId: "502250747699",
+                    appId: "1:502250747699:web:cf38a0754e93cf4fdd7046"
+                };
+                firebase.initializeApp(firebaseConfig);
+                </script>
     </body>
 </html>
