@@ -45,14 +45,24 @@ function removeBookFromLibrary(x) {
 
 function readBookToggle(x) {
     
+    let btn = document.getElementById(`${x}`);
+    console.log(x)
+
+  
+
     let id = x.replace('readButton-','')
     console.log(`read button ${id} is working`)
 
-    if(myLibrary[id].readStatus === 'Yes'){
-        myLibrary[id].readStatus = 'No'
+    if(myLibrary[id].readStatus === 'Read'){
+        myLibrary[id].readStatus = 'Unread'
+        btn.innerHTML = myLibrary[id].readStatus
+        
+
     }
-    else if(myLibrary[id].readStatus === 'No'){
-        myLibrary[id].readStatus = 'Yes'
+    else if(myLibrary[id].readStatus === 'Unread'){
+        myLibrary[id].readStatus = 'Read'
+        btn.innerHTML = myLibrary[id].readStatus
+        
     }
 
     console.log(myLibrary[id].readStatus)
@@ -61,8 +71,8 @@ function readBookToggle(x) {
 
 }
 
-addBookToLibrary('Harry Potter and the Order of the Phoenix', 'JK Rowling', 287, 'Yes')
-addBookToLibrary('The Hobbit', 'J.R.R Tolkein', 310, 'Yes')
+addBookToLibrary('Harry Potter and the Order of the Phoenix', 'JK Rowling', 287, 'Read')
+addBookToLibrary('The Hobbit', 'J.R.R Tolkein', 310, 'Read')
 
 
 
@@ -73,27 +83,52 @@ function addGrid() {
     
         gridElement = document.createElement('div');
         
+        //<p class="card-text">${myLibrary[obj].pages} pages</p><br>
+        //<p class="card-text">Read: ${myLibrary[obj].readStatus}</p>
 
         gridElement.innerHTML = `
-                                <div class="card-body">
+                                <div style= class="card-body">
                                 <h5 class="card-title">${myLibrary[obj].title}</h5><br>
                                 <h5 class="card-title">${myLibrary[obj].author}</h5><br>
-                                <p class="card-text">${myLibrary[obj].pages} pages</p><br>
-                                <p class="card-text">Read: ${myLibrary[obj].readStatus}</p>
+                                </div>
+                                <div class= "card-buttons" id="buttons-${obj}">
+                                
+                                
                                 </div>                  
                                 `
 
         gridElement.id = `bookObject${obj}`
 
-        if(myLibrary[obj].r === undefined) {
-            myLibrary[obj].r = rnd(0,255)
-            myLibrary[obj].g = rnd(0,255)
-            myLibrary[obj].b = rnd(50,255)
-            
+        if(myLibrary[obj].color === undefined) {
 
+            switch(rnd(1,5)) {
+
+                case 1:
+                    myLibrary[obj].color = '#0b510b'
+                    break;
+                case 2:
+                    myLibrary[obj].color = '#510b2f'
+                    break;
+                case 3:
+                    myLibrary[obj].color = '#0b1b51'
+                    break;
+                case 4: 
+                    myLibrary[obj].color = '#6b6b47'
+                    break;
+                case 5:
+                    myLibrary[obj].color = '#000000'
+                    break;
+
+            }
+          
         }
 
-        gridElement.style.backgroundColor = `rgb(${myLibrary[obj].r},${myLibrary[obj].g},${myLibrary[obj].b})`;
+     
+
+        //font = e2b414
+
+
+        gridElement.style.backgroundColor = `${myLibrary[obj].color }`;
 
         gridElement.classList.add('bookObj');
         
@@ -107,17 +142,23 @@ function addGrid() {
         let buttonElement = document.createElement('button')
         buttonElement.id = `bookButton-${obj}`
         buttonElement.classList.add('deleteButton');
-        buttonElement.innerHTML = 'Delete Book'
+        // buttonElement.innerHTML = 'Delete'
         
-        let gridNode = document.getElementById(gridElement.id)
+        let gridNode = document.getElementById(`buttons-${obj}`)
  
         let readButtonElement = document.createElement('button')
         readButtonElement.id = `readButton-${obj}`
         readButtonElement.classList.add('readToggle');
-        readButtonElement.innerHTML = 'Read?'
+        
 
-        gridNode.appendChild(readButtonElement)
+        readButtonElement.innerHTML = myLibrary[obj].readStatus;
+
+     
         gridNode.appendChild(buttonElement)
+        gridNode.appendChild(readButtonElement)
+        
+
+        
 
     }
     let deleteButton = document.querySelectorAll('.deleteButton')

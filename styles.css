@@ -7,14 +7,14 @@ body, html {
 body {
 
     font-family: Arial, Helvetica, sans-serif;
+  
 
     
 
 }
 
 .hero-image {
-    background: rgb(169,195,210);
-    background: linear-gradient(0deg, rgba(169,195,210,1) 0%, rgba(153,167,251,1) 100%) fixed;
+    background: lightgray;
     height: 20%;
     background-position: center;
     background-repeat: no-repeat;
@@ -85,13 +85,12 @@ body {
 }
 
 #menuModal {
-
+    background-color: chocolate;
     width: 100%;
     height: 50px;
-    background-color: #a335ee;
-    box-shadow: 0px 2px 4px 0px black;
+    box-shadow: 0px 1px 2px 0px black;
+    margin-bottom: 5px;
     border: none;
-    color: white;
     font-family: 'Oleo Script', cursive;
     font-size: large;  
 
@@ -200,63 +199,12 @@ body {
     max-width: 100%;
     display: grid;
     grid-gap: 10px;
-    row-gap: 100px;
+    row-gap: 10px;
 	grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
 
    
 
 }
-
-
-
-
-
-.card-title {
-    
-    padding: 0px;
-    font-size: 1em;
-    margin: 10px 0px 0px 0px;
-    font-family: 'Playfair Display SC', serif;
-    font-weight: bold;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    
-    
-    
-
-}
-
-.card-text {
-  
-    padding: 10px;
-    margin: 0px 0px 0px 0px;
-    font-family: 'Playfair Display SC', serif;
-    font-weight: bold;
-    overflow: hidden;
-    text-overflow: ellipsis;
-   
-    font-size: 0.8em;
-  
-
-} 
-
-.card-body {
-
-    width: 100%;
-    height: 100%;
-    padding: 10px;
-    
-
-  
-  
-    /* display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr; */
-}
-
-
-
-
 
 .bookObj {
      
@@ -266,29 +214,108 @@ body {
     margin-top: 3px;
     box-shadow: 0px 2px 4px 0px black;
     text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr; 
+    
+    
+
+}
+
+
+
+
+.card-title {
+    
+    width: 200px;
+    padding: 0px;
+    font-size: 1em;
+    margin: 10px 0px 0px 0px;
+    font-family: 'Playfair Display SC', serif;
+    font-weight: bold;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #e2b414;
+    
+    
+    
+    
+
+}
+
+.card-text {
+  
+    padding: 10px;
+    color: #e2b414;
+    margin: 0px 0px 0px 0px;
+    font-family: 'Playfair Display SC', serif;
+    /* font-weight: bold; */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+    
+   
+    font-size: 1em;
+  
+
+} 
+
+.card-body {
+
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+
+  
+  
+   
+}
+
+
+
+
+
+
+
+.card-buttons {
+grid-row: 6;
 
 }
 
  .deleteButton {
 
-    background-color: lightcoral; 
+    background-color: rgba(252, 137, 137, 0.523); 
     border: none;
     height: 20px;
-    width: 100%;
-    /* margin: 5px 10px 10px 10px; */
-    box-shadow: 0px 2px 4px 0px slategray; 
+    width: 10%;
+    border-radius: 100px;
+
+     box-shadow: 0px 2px 4px 0px slategray; 
     font-family: 'Oleo Script', cursive;
     font-size: medium;
-    color: white;
+    color: white; 
 
-}
+   
+    
+    
 
-.deleteButton:hover {
-    cursor: pointer;
-}
+ } 
+
+ .deleteButton:hover {
+    cursor: pointer; 
+    background-color: coral;
+    
+} 
+
+
 
 .readToggle {
-    background-color:lightgreen ;
+    background-color: #c67716 ;
     border: none;
     height: 20px;
     width: 100%;
@@ -298,11 +325,13 @@ body {
     font-family: 'Oleo Script', cursive;
     font-size: medium;
     color: black;
+    
 
 }
 
 .readToggle:hover {
     cursor: pointer;
+    background-color: #c19a6c ;
 } 
 
 #addButton {
@@ -312,7 +341,7 @@ body {
     height: 30px;
     margin-left: 100px;
   
-    background-color: #a335ee;
+    background-color: chocolate;
     box-shadow: 0px 2px 4px 0px black;
     border: none;
     color: white;
