@@ -113,7 +113,7 @@ function addGrid() {
                     myLibrary[obj].color = '#0b1b51'
                     break;
                 case 4: 
-                    myLibrary[obj].color = '#6b6b47'
+                    myLibrary[obj].color = '#571c33'
                     break;
                 case 5:
                     myLibrary[obj].color = '#000000'
@@ -125,7 +125,7 @@ function addGrid() {
 
      
 
-        //font = e2b414
+        
 
 
         gridElement.style.backgroundColor = `${myLibrary[obj].color }`;

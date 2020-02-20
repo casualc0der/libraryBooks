@@ -7,6 +7,7 @@ body, html {
 body {
 
     font-family: Arial, Helvetica, sans-serif;
+    background-color: #984d65;
   
 
     
@@ -14,8 +15,9 @@ body {
 }
 
 .hero-image {
-    background: lightgray;
+    background: #984d65;
     height: 20%;
+    background-image: url('/Users/eddsansome/Desktop/libraryBooks/janko-ferlic-sfL_QOnmy00-unsplash.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -85,13 +87,13 @@ body {
 }
 
 #menuModal {
-    background-color: chocolate;
+    background-color: #e3c57e;
     width: 100%;
     height: 50px;
     box-shadow: 0px 1px 2px 0px black;
     margin-bottom: 5px;
     border: none;
-    font-family: 'Oleo Script', cursive;
+    font-family: monospace;
     font-size: large;  
 
     
@@ -161,7 +163,8 @@ body {
 
 .modal-content {
     font-size: large;
-    background-color: white;
+    background-color: #984d65;
+    ;
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
@@ -296,7 +299,7 @@ grid-row: 6;
     border-radius: 100px;
 
      box-shadow: 0px 2px 4px 0px slategray; 
-    font-family: 'Oleo Script', cursive;
+     font-family: monospace;
     font-size: medium;
     color: white; 
 
@@ -308,21 +311,23 @@ grid-row: 6;
 
  .deleteButton:hover {
     cursor: pointer; 
-    background-color: coral;
+    /* background-color: coral; */
+    background-image: url('/Users/eddsansome/Desktop/libraryBooks/deletelogo.png');
+    background-size: 20px;
     
 } 
 
 
 
 .readToggle {
-    background-color: #c67716 ;
+    background-color: #e3c57e ;
     border: none;
     height: 20px;
     width: 100%;
     margin-top: 10px;
     margin-bottom: 10px;
     box-shadow: 0px 2px 4px 0px slategray; 
-    font-family: 'Oleo Script', cursive;
+    font-family: monospace;
     font-size: medium;
     color: black;
     /* color: chocolate; */
@@ -332,7 +337,8 @@ grid-row: 6;
 
 .readToggle:hover {
     cursor: pointer;
-    background-color: #c19a6c ;
+    background-color: #ffde91 ;
+    ;
 } 
 
 #addButton {
@@ -342,12 +348,63 @@ grid-row: 6;
     height: 30px;
     margin-left: 100px;
   
-    background-color: chocolate;
+    background-color: #e3c57e;
     box-shadow: 0px 2px 4px 0px black;
     border: none;
-    color: white;
-    font-family: 'Oleo Script', cursive;
+    color: black;
+    font-family: monospace;
     font-size: large; 
 }
+
+input[type=text] {
+
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing:border-box;
+    background-color: #984d65 ;
+    border-radius: 20px;
+    border: none;
+    font-size: xx-large;
+    text-emphasis: bold;
+    color: #e3c57e;
+    font-family: monospace;
+    
+
+}
+input[type=text]:focus {
+
+    border: 3px solid #a55871;
+    outline: none;
+
+   
+}
+
+input[type=text]::placeholder {
+    color: #e3c57e;
+    font-family: monospace;
+} 
+
+select {
+
+    width: 20%;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #984d65;
+    color: #e3c57e;
+    font-size: x-large;
+}
+
+.modalText {
+    color: #e3c57e;
+    font-size: xX-large;
+    font-family: monospace;
+    padding: 0px;
+    margin: 0px;
+    margin-left: 10px;
+}
+
+
 
 
