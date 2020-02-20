@@ -17,7 +17,7 @@ body {
 .hero-image {
     background: #984d65;
     height: 20%;
-    background-image: url('/Users/eddsansome/Desktop/libraryBooks/janko-ferlic-sfL_QOnmy00-unsplash.jpg');
+    background-image: url('janko-ferlic-sfL_QOnmy00-unsplash.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -182,7 +182,7 @@ body {
 }
 
 .close {
-    color: #aaa;
+    color: #e3c57e;
     float: right;
     margin-bottom: 20px;
     font-size: 28px;
@@ -191,7 +191,7 @@ body {
 
 .close:hover, .close:focus {
 
-    color:black;
+    color:#ffdd8d;
     text-decoration: none;
     cursor: pointer;
 }
@@ -295,7 +295,7 @@ grid-row: 6;
     background-color: rgba(252, 137, 137, 0.523); 
     border: none;
     height: 20px;
-    width: 10%;
+    width: 20px;
     border-radius: 100px;
 
      box-shadow: 0px 2px 4px 0px slategray; 
@@ -312,7 +312,7 @@ grid-row: 6;
  .deleteButton:hover {
     cursor: pointer; 
     /* background-color: coral; */
-    background-image: url('/Users/eddsansome/Desktop/libraryBooks/deletelogo.png');
+    background-image: url('deletelogo.png');
     background-size: 20px;
     
 } 
@@ -346,8 +346,7 @@ grid-row: 6;
     width: 104px;
     float: inline-start;
     height: 30px;
-    margin-left: 100px;
-  
+    margin-left: 100px;  
     background-color: #e3c57e;
     box-shadow: 0px 2px 4px 0px black;
     border: none;
@@ -358,14 +357,14 @@ grid-row: 6;
 
 input[type=text] {
 
-    width: 100%;
+    width: 75%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing:border-box;
     background-color: #984d65 ;
     border-radius: 20px;
-    border: none;
-    font-size: xx-large;
+    border: 1px solid;
+    font-size: x-large;
     text-emphasis: bold;
     color: #e3c57e;
     font-family: monospace;
@@ -374,7 +373,7 @@ input[type=text] {
 }
 input[type=text]:focus {
 
-    border: 3px solid #a55871;
+    border: 1px solid #e3c57e;
     outline: none;
 
    
@@ -389,20 +388,25 @@ select {
 
     width: 20%;
     padding: 16px 20px;
-    border: none;
+    border: 1px solid;
     border-radius: 4px;
     background-color: #984d65;
     color: #e3c57e;
-    font-size: x-large;
+    font-size: large;
+    margin-left: 12px;
+    margin-top: 10px;
+    font-family: monospace;
+
 }
 
 .modalText {
     color: #e3c57e;
-    font-size: xX-large;
+    font-size: x-large;
     font-family: monospace;
     padding: 0px;
     margin: 0px;
-    margin-left: 10px;
+    margin-left: 20px;
+   
 }
 
 
