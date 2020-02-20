@@ -298,7 +298,7 @@ grid-row: 6;
     width: 20px;
     border-radius: 100px;
 
-     box-shadow: 0px 2px 4px 0px slategray; 
+     /* box-shadow: 0px 2px 4px 0px slategray;  */
      font-family: monospace;
     font-size: medium;
     color: white; 
@@ -313,7 +313,10 @@ grid-row: 6;
     cursor: pointer; 
     /* background-color: coral; */
     background-image: url('deletelogo.png');
-    background-size: 20px;
+    border: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 100px;
     background-repeat: no-repeat;
     
 } 
