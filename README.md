@@ -1,8 +1,8 @@
 # Libary Books assignment for the Odin Project
 
 ### Virtual library
-### * Add and remove books.
-### * Mark books as read/unread.
+* Add and remove books.
+* Mark books as read/unread.
 
 ### Tools used: 
 
