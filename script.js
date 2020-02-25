@@ -10,13 +10,14 @@ let button = addBookToScreen.addEventListener('click', () => bookForm());
 
 window.onload = () => addGrid();
 
-function Book(title, author, pages, readStatus) {
+class Book {
 //book object constructor
-
+    constructor(title, author, pages, readStatus) {
     this.title = title,
     this.author = author,
     this.pages = pages,
     this.readStatus = readStatus
+    }
 }
 
 function addBookToLibrary(title, author, pages, readStatus) {
@@ -123,19 +124,11 @@ function addGrid() {
           
         }
 
-     
-
-        
-
 
         gridElement.style.backgroundColor = `${myLibrary[obj].color }`;
 
         gridElement.classList.add('bookObj');
         
-
-
-       
-
         let node = document.getElementById('bookshelf');
         node.appendChild(gridElement)
 
