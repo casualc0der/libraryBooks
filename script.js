@@ -5,6 +5,22 @@ let myForm = []
 let addBookToScreen = document.getElementById('addButton');
 let button = addBookToScreen.addEventListener('click', () => bookForm());
 
+if ('library' in localStorage) {
+
+    console.log('yes!')
+    const localLibrary = JSON.parse(localStorage.getItem('library'));
+    localLibrary.forEach((e) => {
+
+        myLibrary.push(e)
+
+    })
+    
+}
+else {
+
+    addBookToLibrary('Harry Potter and the Order of the Phoenix', 'JK Rowling', 287, 'Read')
+    addBookToLibrary('The Hobbit', 'J.R.R Tolkein', 310, 'Read')
+}
 
 
 
@@ -27,7 +43,8 @@ function addBookToLibrary(title, author, pages, readStatus) {
     book.readStatus = readStatus
 
     myLibrary.push(book)
-    
+    localStorage.setItem('library', JSON.stringify(myLibrary))
+   
 
 }
 
@@ -36,8 +53,12 @@ function removeBookFromLibrary(x) {
     let id = x.replace('bookButton-','')
     console.log(`delete button ${id} is working`)
     console.log(typeof(id))
-    
+    const localLibrary = JSON.parse(localStorage.getItem('library'));
+    localLibrary.splice(id,1)
     myLibrary.splice(id, 1)
+    localStorage.setItem('library', JSON.stringify(localLibrary))
+
+    
     refreshGrid();
     addGrid();
     clearInputs();
@@ -71,8 +92,7 @@ function readBookToggle(x) {
 
 }
 
-addBookToLibrary('Harry Potter and the Order of the Phoenix', 'JK Rowling', 287, 'Read')
-addBookToLibrary('The Hobbit', 'J.R.R Tolkein', 310, 'Read')
+
 
 
 
