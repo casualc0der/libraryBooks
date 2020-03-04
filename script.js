@@ -6,18 +6,14 @@ let addBookToScreen = document.getElementById('addButton');
 let button = addBookToScreen.addEventListener('click', () => bookForm());
 
 
-class Book {
+const bookFactory = () => {
     //book object constructor
-        constructor(title, author, pages, readStatus) {
-        this.title = title,
-        this.author = author,
-        this.pages = pages,
-        this.readStatus = readStatus
-        }
+        return {title, author, pages, readStatus} 
+      
     }
     
     function addBookToLibrary(title, author, pages, readStatus) {
-        let book = new Book();
+        let book = bookFactory();
         book.author = author
         book.pages = pages
         book.title = title
