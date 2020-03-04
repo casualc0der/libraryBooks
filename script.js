@@ -26,7 +26,7 @@ const bookFactory = () => {
     }
 if ('library' in localStorage) {
 
-    console.log('yes!')
+    
     const localLibrary = JSON.parse(localStorage.getItem('library'));
     localLibrary.forEach((e) => {
 
@@ -50,8 +50,7 @@ window.onload = () => addGrid();
 function removeBookFromLibrary(x) {
     
     let id = x.replace('bookButton-','')
-    console.log(`delete button ${id} is working`)
-    console.log(typeof(id))
+    
     const localLibrary = JSON.parse(localStorage.getItem('library'));
     localLibrary.splice(id,1)
     myLibrary.splice(id, 1)
@@ -66,12 +65,12 @@ function removeBookFromLibrary(x) {
 function readBookToggle(x) {
     
     let btn = document.getElementById(`${x}`);
-    console.log(x)
+
 
   
 
     let id = x.replace('readButton-','')
-    console.log(`read button ${id} is working`)
+    
 
     if(myLibrary[id].readStatus === 'Read'){
         myLibrary[id].readStatus = 'Unread'
@@ -85,7 +84,7 @@ function readBookToggle(x) {
         
     }
 
-    console.log(myLibrary[id].readStatus)
+    
     refreshGrid();
     addGrid();
 
@@ -203,8 +202,7 @@ function bookForm() {
     let pages = document.getElementById('pages').value
     let readStatus = document.getElementById('readStatus').value
 
-    console.log(typeof(title), typeof(author), typeof(pages)
-                        ,typeof(readStatus))
+   
 
     if(title === ''|| author === '' || pages === '' || readStatus === '') {
 
