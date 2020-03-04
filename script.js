@@ -5,6 +5,29 @@ let myForm = []
 let addBookToScreen = document.getElementById('addButton');
 let button = addBookToScreen.addEventListener('click', () => bookForm());
 
+
+class Book {
+    //book object constructor
+        constructor(title, author, pages, readStatus) {
+        this.title = title,
+        this.author = author,
+        this.pages = pages,
+        this.readStatus = readStatus
+        }
+    }
+    
+    function addBookToLibrary(title, author, pages, readStatus) {
+        let book = new Book();
+        book.author = author
+        book.pages = pages
+        book.title = title
+        book.readStatus = readStatus
+    
+        myLibrary.push(book)
+        localStorage.setItem('library', JSON.stringify(myLibrary))
+       
+    
+    }
 if ('library' in localStorage) {
 
     console.log('yes!')
@@ -26,28 +49,7 @@ else {
 
 window.onload = () => addGrid();
 
-class Book {
-//book object constructor
-    constructor(title, author, pages, readStatus) {
-    this.title = title,
-    this.author = author,
-    this.pages = pages,
-    this.readStatus = readStatus
-    }
-}
 
-function addBookToLibrary(title, author, pages, readStatus) {
-    let book = new Book();
-    book.author = author
-    book.pages = pages
-    book.title = title
-    book.readStatus = readStatus
-
-    myLibrary.push(book)
-    localStorage.setItem('library', JSON.stringify(myLibrary))
-   
-
-}
 
 function removeBookFromLibrary(x) {
     
